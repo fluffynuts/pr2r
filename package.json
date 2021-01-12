@@ -1,0 +1,35 @@
+{
+  "name": "pr2r",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "prebuild": "rimraf web-ext-artifacts",
+    "build": "web-ext build",
+    "release": "run-s increment-version build tag push warn",
+    "increment-version": "run-s \"zarro increment-manifest-version\"",
+    "tag": "run-s \"zarro git-tag\"",
+    "push": "run-s \"zarro git-push\"",
+    "zarro": "zarro",
+    "warn": "node -e \"console.warn('Remember to upload the package!')\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/fluffynuts/pr2r.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fluffynuts/pr2r/issues"
+  },
+  "homepage": "https://github.com/fluffynuts/pr2r#readme",
+  "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
+    "simple-git": "^2.31.0",
+    "web-ext": "^5.4.1",
+    "yafs": "^1.7.0",
+    "zarro": "^1.82.0"
+  }
+}
