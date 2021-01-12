@@ -1,20 +1,20 @@
 {
-    "manifest_version": 2,
-    "name": "PR2R",
-    "version": "1.0",
-    "description": "Adds a button to GitHub Pull Request pages to create a Release from the current Pull Request",
-    "icons": {
-        "48": "icon-48.png",
-        "96": "icon-96.png"
-    },
-    "content_scripts": [
-        {
-            "matches": [
-                "https://github.com/*/pull/*"
-            ],
-            "js": [
-                "main.js"
-            ]
-        }
-    ]
+  "manifest_version": 2,
+  "name": "PR2R",
+  "version": "1.1",
+  "description": "Adds a button to GitHub Pull Request pages to create a Release from the current Pull Request",
+  "icons": {
+    "48": "icon-48.png",
+    "96": "icon-96.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://github.com/*/pull/*"
+      ],
+      "js": [
+        "main.js"
+      ]
+    }
+  ]
 }
