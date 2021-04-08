@@ -80,8 +80,23 @@
       : lines.join("\n").trim();
   }
 
+  function findProjectBaseUrl() {
+    const allParts = window.location.href.split("/");
+    return allParts.slice(0, allParts.indexOf(window.location.hostname) + 3).join("/");
+  }
+  function projectRelativeUrl(rel) {
+    try {
+      return new URL([ findProjectBaseUrl(), rel].join("/"));
+    } catch (e) {
+      console.log(e, {
+        projectBase: findProjectBaseUrl(),
+        rel
+      });
+    }
+  }
+
   async function findAndIncrementLatestTag() {
-    const url = new URL(window.location.href + "../../../tags");
+    const url = projectRelativeUrl("tags");
     const fallback = "v-edit-me";
     const response = await fetch(url.toString(), {
       headers: {
@@ -138,7 +153,7 @@
   }
 
   async function generateReleaseUrl() {
-    const url = new URL(window.location.href + "../../../releases/new");
+    const url = projectRelativeUrl("releases/new");
 
     url.searchParams.set("target", findPullRequestBranchName());
     url.searchParams.set("title", findPullRequestTitle());
