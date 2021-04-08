@@ -6,7 +6,8 @@
   "scripts": {
     "prebuild": "rimraf web-ext-artifacts",
     "build": "web-ext build",
-    "release": "run-s increment-version build tag push warn",
+    "release": "run-s verify-up-to-date increment-version build tag push warn",
+    "verify-up-to-date": "zarro verify-up-to-date",
     "increment-version": "run-s \"zarro increment-manifest-version\"",
     "tag": "run-s \"zarro git-tag\"",
     "push": "run-s \"zarro git-push\"",
