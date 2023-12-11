@@ -38,9 +38,9 @@
   }
 
   function findPullRequestTitle() {
-    const el = document.querySelector("span.js-issue-title");
+    const el = document.querySelector("bdi.js-issue-title");
     if (!el) {
-      console.error("Can't determine PR title: no 'span.js-issue-title' element found");
+      console.error("Can't determine PR title: no 'bdi.js-issue-title' element found");
       return "New release";
     }
     return el.textContent.trim();
