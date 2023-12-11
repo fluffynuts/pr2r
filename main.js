@@ -48,7 +48,7 @@
 
   function findPullRequestSummary() {
     // relies on the first task-list element being the PR summary
-    var el = document.querySelector("task-lists");
+    const el = document.querySelector("task-lists");
     if (!el) {
       console.error("Can't determine PR summary: no 'task-list' elements found");
       return "- edit me please -";
