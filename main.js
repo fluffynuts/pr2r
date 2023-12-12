@@ -38,9 +38,9 @@
   }
 
   function findPullRequestTitle() {
-    const el = document.querySelector("span.js-issue-title");
+    const el = document.querySelector("bdi.js-issue-title");
     if (!el) {
-      console.error("Can't determine PR title: no 'span.js-issue-title' element found");
+      console.error("Can't determine PR title: no 'bdi.js-issue-title' element found");
       return "New release";
     }
     return el.textContent.trim();
@@ -48,7 +48,7 @@
 
   function findPullRequestSummary() {
     // relies on the first task-list element being the PR summary
-    var el = document.querySelector("task-lists");
+    const el = document.querySelector("task-lists");
     if (!el) {
       console.error("Can't determine PR summary: no 'task-list' elements found");
       return "- edit me please -";
