@@ -16,5 +16,10 @@
         "main.js"
       ]
     }
-  ]
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{aa5394af-2ac6-4e7e-9a9d-b58587eb98fa}"
+    }
+  }
 }
