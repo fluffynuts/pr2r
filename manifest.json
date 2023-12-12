@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "PR2R",
-  "version": "1.2",
+  "version": "1.3",
   "description": "Adds a button to GitHub Pull Request pages to create a Release from the current Pull Request",
   "icons": {
     "48": "icon-48.png",
